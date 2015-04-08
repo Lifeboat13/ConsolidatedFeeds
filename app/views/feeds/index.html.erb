@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-
+<%= cookies[:user_id] = { :value => current_user.id } %>
 
 <% @feeds.each do |feed| %>
     <% open feed.url do |url| %>
@@ -27,11 +27,11 @@
     <% end %>
 
       <%= link_to 'Show', feed %>
-      <%= link_to 'Edit', edit_feed_path(feed) %>
+    <!-- <link_to 'Edit', edit_feed_path(feed)>  don't think this should be an option -->
       <%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %>
     </tr>
 <% end %>
 
-
+<br><br><br>
 
 <%= link_to 'New Feed', new_feed_path %>
