@@ -20,6 +20,6 @@
     <%= f.select :url, Feed.all.collect { |p| [ p.name, p.id ] }, include_blank: true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Feed" %>
   </div>
 <% end %>
