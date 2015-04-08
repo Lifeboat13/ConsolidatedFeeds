@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408153712) do
+ActiveRecord::Schema.define(version: 20150408190807) do
 
   create_table "feeds", force: :cascade do |t|
     t.string   "user_id"
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "feeds_users", force: :cascade do |t|

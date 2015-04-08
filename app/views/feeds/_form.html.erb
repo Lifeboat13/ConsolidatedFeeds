@@ -16,8 +16,8 @@
     <%= f.text_field :user_id, :value => cookies[:user_id], :readonly => true %>
   </div>
   <div class="field">
-    <%= f.label :url %><br>
-    <%= f.select :url, Feed.all.collect { |p| [ p.url, p.id ] }, include_blank: true %>
+    <%= f.label "Website" %><br>
+    <%= f.select :url, Feed.all.collect { |p| [ p.name, p.id ] }, include_blank: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
