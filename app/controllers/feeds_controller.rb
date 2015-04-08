@@ -1,12 +1,13 @@
 class FeedsController < ApplicationController
-  before_action :authenticate_user, :set_feed, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_feed, only: [:show, :edit, :update, :destroy]
   require 'rss'
   require 'open-uri'
 
   # GET /feeds
   # GET /feeds.json
   def index
-    @feeds = Feed.all
+    @feeds = Feed.where(:user_id => current_user.id)
   end
 
   # GET /feeds/1
