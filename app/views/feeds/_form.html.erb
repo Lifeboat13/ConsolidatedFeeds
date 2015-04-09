@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label "Website" %><br>
-    <%= f.select :url, Feed.all.collect { |p| [ p.name, p.id ] }, include_blank: true %>
+    <%= f.select :url, Feed.all.collect { |p| [ p.name, p.url ] }, include_blank: true %>
   </div>
   <div class="actions">
     <%= f.submit "Add Feed" %>

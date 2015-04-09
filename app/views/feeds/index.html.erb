@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<%= cookies[:user_id] = { :value => current_user.id } %>
+<% cookies[:user_id] = { :value => current_user.id } %>
 
 <% @feeds.each do |feed| %>
     <% open feed.url do |url| %>
@@ -16,12 +16,9 @@
             <h3><%= item.title %></h3>
             <a href="<%=item.link%>">Read full article</a>
             <p><%=
-                #This split is for CNN feed
-                item.description.split('FULL').
-                #This split is for ABC feed
-                first.split('<div class="feedflare">').first.
-                #This split is for WashingtonPost feed
-                split('Read full article').first%></p>
+                item.description.split('<').first.split('? ').first.split('! ').first.split('. ').first
+
+               %></p>
 
         <% } %>
     <% end %>
@@ -34,4 +31,4 @@
 
 <br><br><br>
 
-<%= link_to 'New Feed', new_feed_path, %>
+<%= link_to 'New Feed', new_feed_path %>
