@@ -14,12 +14,12 @@
         <% rss.channel.items[1..5].each { |item| %>
 
             <h3><%= item.title %></h3>
-            <a href="<%=item.link%>">Read full article</a>
+
             <p><%=
-                item.description.split('<').first.split('? ').first.split('! ').first.split('. ').first.split('Read full').first
-
-               %></p>
-
+                #item.description.split('<').first.split('? ').first.split('! ').first.split('. ').first.split('Read full').first
+                item.description[0..150].split('<').first.split('? ').first.split('! ').first.split('. ').first.split('Read full').first
+               %>...</p>
+            <a href="<%=item.link%>">Read full article</a>
         <% } %>
     <% end %>
 
