@@ -16,7 +16,6 @@
             <h3><%= item.title %></h3>
 
             <p><%=
-                #item.description.split('<').first.split('? ').first.split('! ').first.split('. ').first.split('Read full').first
                 item.description[0..150].split('<').first.split('? ').first.split('! ').first.split('. ').first.split('Read full').first
                %>...</p>
             <a href="<%=item.link%>">Read full article</a>

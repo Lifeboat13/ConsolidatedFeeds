@@ -7,7 +7,7 @@ class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.json
   def index
-    @feeds = Feed.where(:user_id => current_user.id)
+    @feeds = Feed.where(:id => UsersFeed.where(:user_id => current_user))
   end
 
   # GET /feeds/1

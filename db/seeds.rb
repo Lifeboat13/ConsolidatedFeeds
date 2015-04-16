@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Feed.delete_all
 
-Feed.create!(user_id: 1, url: 'http://rss.cnn.com/rss/cnn_topstories.rss', name: 'CNN')
-Feed.create!(user_id: 1, url: 'http://feeds.abcnews.com/abcnews/topstories', name: 'ABC News')
-Feed.create!(user_id: 1, url: 'http://feeds.washingtonpost.com/rss/homepage', name: 'Washington Post')
+Feed.create!(url: 'http://rss.cnn.com/rss/cnn_topstories.rss', name: 'CNN')
+Feed.create!(url: 'http://feeds.abcnews.com/abcnews/topstories', name: 'ABC News')
+Feed.create!(url: 'http://feeds.washingtonpost.com/rss/homepage', name: 'Washington Post')
